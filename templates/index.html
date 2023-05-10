@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/afcb52252c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/myntra.ico') }}" type="image/x-icon">
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-somehash" crossorigin="anonymous" />
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+
+
+    <title>Myntra Fashion Product Recommendation System</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3  bg-white ">
+
+
+
+            <a class="navbar-brand" href="">
+                <img src="https://imgeng.jagran.com/images/2021/jan/Myntra-805x530-1-700x4611611985286383.jpg"
+                    alt="Mynta" class="coco mr-5" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">MEN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">WOMEN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">KIDS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">HOME & LIVING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">BEAUTY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">STUDIO <sup class="newSuperScript">NEW</sup></a>
+                    </li>
+
+                </ul>
+
+
+
+                <div class="form-group has-search flex-grow-1">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search for products, brands and more" />
+                </div>
+                <div class="navlogos">
+
+                    <!-- <img id="img" draggable="false" class="likeBTN" alt="" width="200" src="navbarlogos.png"> -->
+                    <img src="{{ url_for('serve_image', image_filename='navbarlogos.png') }}" id="img" draggable="false"
+                        class="likeBTN" alt="" width="200" alt="Image 1">
+
+                </div>
+
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="countdown" id="countdown">
+        <span>Sale Ends In</span>
+        <span id="days">00</span>
+        <span id="hours" style="color:palevioletred;">00</span><sub>H</sub>
+        :
+        <span id="minutes" style="color:palevioletred;">00</span> <sub>M</sub>
+        :
+        <span id="seconds" style="color:palevioletred;">00</span> <sub>S</sub>
+    </div>
+    <br>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-interval="500">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('serve_image', image_filename='caro1.png') }}" class="d-block w-100">
+
+                <!-- <img src="caro1.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro2.png') }}" class="d-block w-100">
+                <!-- <img src="caro2.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro3.png') }}" class="d-block w-100">
+                <!-- <img src="caro3.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro4.png') }}" class="d-block w-100">
+                <!-- <img src="caro4.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro5.png') }}" class="d-block w-100">
+                <!-- <img src="caro5.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro6.png') }}" class="d-block w-100">
+                <!-- <img src="caro6.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro7.png') }}" class="d-block w-100">
+                <!-- <img src="caro7.png" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('serve_image', image_filename='caro8.png') }}" class="d-block w-100">
+                <!-- <img src="caro8.png" class="d-block w-100" alt="..."> -->
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <div class="Headings">
+        <h2>BEST OF MYNTRA EXCLUSIVE BRANDS</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal9.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal10.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal11.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal12.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal13.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal14.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal15.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='deal16.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+
+
+    <div class="Headings">
+        <h2>TOP PICKS</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 16rem;margin:11px;">
+            <img src="{{ url_for('serve_image', image_filename='toppick7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="toppick7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+
+    </div>
+    <br>
+    <br>
+    <center>
+
+        <div class="Headings">
+            <h2>SPECIAL RECOMMENDATION SYSTEM FOR WOMENS</h2>
+            <label for="selectDropdown" class="form-label" style="color: palevioletred;">Please select your favorite
+                product to receive personalized recommendations:</label>
+        </div>
+
+        <form action="/" method="POST">
+
+
+                <select name="selected_products"  class="form-select" id="selectDropdown"
+                style="background-color: #f2f2f2;color: black;">
+                {% for product in product_list %}
+                <option value="{{ product }}">{{ product[:14100] }}</option>
+                
+                {% endfor %}
+            </select>
+            
+  
+            <!-- <a href="recommendation.html"  type="submit" class="recommendLink">Recommend</a> -->
+            <button type="submit" class="btn recommendLink">Show Recommendation</button>
+        </form>
+
+    </center>
+
+
+
+    <div class="Headings">
+        <h2>CATEGORIES TO BAG</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag9.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag10.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag11.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag12.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag13.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag14.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag15.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag16.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag17.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag18.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag19.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag20.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag21.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag22.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag23.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='bag24.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <div class="Headings">
+        <h2>DEALS ON TOP BRANDS</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb9.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb10.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb11.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb12.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb13.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb14.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb15.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb16.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb17.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb18.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb19.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb20.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb21.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb22.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb23.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="card" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='topb24.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <!-- next one over here -->
+
+    <div class="Headings">
+        <h2>BRANDS AT SLASHED PRICES</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+
+    </div>
+    <div class="deals" style="margin-top: 6px;">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand9.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand10.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand11.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand12.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand13.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand14.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='salebrand8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+    </div>
+
+    <!-- next one over here -->
+
+    <div class="Headings">
+        <h2>BEST BUYS</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best9.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best10.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best11.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best12.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best13.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best14.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best15.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='best16.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>MYNTRA LUXE</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+    <div class="deals" style="position:relative ;bottom: 3px;">
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux9.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal9.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux10.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal10.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux11.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal11.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux12.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal12.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux13.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal13.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux14.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal14.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux15.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal15.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='lux16.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal16.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>TRENDS FOR HER</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='her8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>TRENDS FOR HIM</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 15rem;">
+            <img src="{{ url_for('serve_image', image_filename='him8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal8.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>BEST OF KIDSWEAR</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='kids7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+
+    </div>
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>NEW IN TOP BRANDS</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='newtb8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>NEWNESS FOR EVERY OCCASION</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+    </div>
+
+    <div class="deals">
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='occ8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+    </div>
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>LATEST IN BEAUTY & GROOMING</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+    </div>
+
+    <div class="deals">
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='latestinb8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+    </div>
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>UNMISSABLE THIS SEASON</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='unmissable8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>COLOURS OF THE SEASON</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+    </div>
+
+    <div class="deals">
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 30rem;">
+            <img src="{{ url_for('serve_image', image_filename='cos8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+    </div>
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>TOP INFLUENCERS EXCLUSIVE STYLES</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 21rem;">
+            <img src="{{ url_for('serve_image', image_filename='influ1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 21rem;">
+            <img src="{{ url_for('serve_image', image_filename='influ2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 21rem;">
+            <img src="{{ url_for('serve_image', image_filename='influ3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 21rem;">
+            <img src="{{ url_for('serve_image', image_filename='influ4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 21rem;">
+            <img src="{{ url_for('serve_image', image_filename='influ5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 21rem;">
+            <img src="{{ url_for('serve_image', image_filename='influ6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>BUDGET PICKS INFLUENCERS LOVE</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='budget8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+    <!-- next one over here -->
+    <div class="Headings">
+        <h2>TRENDING OUTFITS BY INFLUENCERS</h2>
+    </div>
+    <br>
+    <br>
+    <div class="deals">
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending1.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal1.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending2.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal2.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending3.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal3.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending4.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal4.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending5.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal5.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending6.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal6.png" class="card-img-top" alt="..."> -->
+        </div>
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending7.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+        <div class="border-0" style="width: 18rem;">
+            <img src="{{ url_for('serve_image', image_filename='trending8.png') }}" class="card-img-top" alt="...">
+            <!-- <img src="deal7.png" class="card-img-top" alt="..."> -->
+        </div>
+
+    </div>
+
+
+    <!-- creatining the bottom part of the UI over here -->
+    <br>
+    <br>
+    <br>
+
+    <div class="footer">
+
+        <center>
+
+            <img src="{{ url_for('serve_image', image_filename='footer1.png') }}"  alt="...">
+            <img src="{{ url_for('serve_image', image_filename='footer2.png') }}"  alt="...">
+            <img src="{{ url_for('serve_image', image_filename='footer3.png') }}"  alt="...">
+            <img src="{{ url_for('serve_image', image_filename='footer4.png') }}"  alt="...">
+            <img src="{{ url_for('serve_image', image_filename='footer5.png') }}"  alt="...">
+        </center>
+    </div>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

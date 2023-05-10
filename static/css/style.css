@@ -1,0 +1,166 @@
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+.coco {
+    width: 60px;
+    /*border: 1px solid blue;*/
+}
+
+.nav-item {
+    font-weight: bold;
+    color: black;
+}
+
+.navbar-brand{
+    position: relative;
+    left: 100px;
+}
+.nav-item,
+.nav-link {
+    font-size: 13px;
+    color:#333333;
+    margin: 6px;
+
+}
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+
+}
+
+input[type="text"] {
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    width: 89%;
+    background-color: #f2f2f2;
+}
+
+
+nav{
+    height: 75px;
+}
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+.navlogos{
+    position: relative;
+    right: 30px;
+}
+
+
+.nav-item{
+    position: relative;
+    
+    left: 200px;
+}
+
+.newSuperScript{
+    font-size: 10px;
+    position: relative;
+    color: palevioletred;
+}
+
+
+.countdown {
+    font-size: 20px;
+    text-align: center;
+    background-color: #E6E6FA;
+    padding-top: 10px;
+    height: 52px;
+    
+  }
+
+#days{
+    visibility: hidden;
+}
+
+
+.Headings{
+    padding-top: 50px;
+    padding-left: 30px;
+    font-weight: 900;
+    
+}
+
+.recommend-again{
+    position: relative;
+    left: 425px;
+    color: palevioletred;
+    text-decoration: none;
+    bottom: 20px;
+}
+
+.recommendLink{
+    position: relative;
+    left: 425px;
+    color: palevioletred;
+    text-decoration: none;
+    bottom: 25px;
+
+}
+
+
+.deals{
+    
+    display: flex;
+    
+}
+
+.card{
+    /* margin: 2px; */
+    border-radius: 0;
+    display: flex;
+    border: solid 2px #f6f6f6;
+}
+
+
+
+.product-image{
+    display: inline-block;
+    
+    /* border: solid 10px; */
+    border: solid 10px;
+    border-image-source: linear-gradient(to right, #f8b182, #5cb4d5);
+    border-image-slice: 1;
+}
+
+    
+#selectDropdown{
+    margin: 50px;
+    width: 50%;
+}
+
+
+.vertical-center {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+.online-shopping{
+    font-size: 14px;
+}
+
+
+.footer{
+    padding-top: 20px;
+    background-color: #fafbfc;
+}
