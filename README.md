@@ -20,6 +20,7 @@ Overall, by employing Flask and integrating frontend technologies, I created an 
 ## Let's put our recommendation system to the test!
 
 
+## Here are some ways you can use this model to improve the business and increase profit:
 The content-based recommendation system that I have developed using the Myntra dataset for women can significantly contribute to the growth of Myntra company. Here's how it can help:
 
 1) Enhanced Customer Experience: By employing advanced data preprocessing techniques and leveraging the power of text analysis, the recommendation system can deliver accurate and relevant product suggestions. This helps users in discovering new and trendy items that align with their preferences, ultimately enhancing their overall shopping experience on Myntra.
