@@ -16,3 +16,5 @@ In the Development environment, I crafted a highly interactive web application u
 To facilitate collaboration with team members, I initiated a repository on GitHub, adhering to best practices. Additionally, I established a virtual environment using Anaconda, ensuring a clean and isolated development environment. Within this environment, I created various files, such as setup.py to store metadata, requirements.txt to document package dependencies, and directories like templates and static for constructing a dynamic and engaging user interface. Moreover, I utilized .gitignore to exclude certain files, such as the virtual environment folder and data folder, from version control.
 
 Overall, by employing Flask and integrating frontend technologies, I created an immersive web application with an interactive UI, closely resembling Myntra's official website. The project's well-organized structure, collaboration-ready repository, and usage of a virtual environment contribute to a streamlined and efficient development process.
+
+## Let's put our recommendation system to the test!
