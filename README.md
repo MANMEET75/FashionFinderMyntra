@@ -20,6 +20,7 @@ To facilitate collaboration with team members, I initiated a repository on GitHu
 Overall, by employing Flask and integrating frontend technologies, I created an immersive web application with an interactive UI, closely resembling Myntra's official website. The project's well-organized structure, collaboration-ready repository, and usage of a virtual environment contribute to a streamlined and efficient development process.
 
 ## Let's put our recommendation system to the test!
+<img src="appdemo.gif" alt="testing-of-recommendation-system">
 
 
 ## Here are some ways you can use this model to improve the business and increase profit:
@@ -34,3 +35,18 @@ The content-based recommendation system that I have developed using the Myntra d
 4) Data-Driven Insights: The recommendation system generates valuable insights into customer behavior and preferences. Myntra can leverage this information to make data-driven business decisions, such as identifying popular trends, optimizing inventory management, and tailoring marketing strategies to target specific customer segments effectively.
 
 Overall, the content-based recommendation system I have developed can help Myntra drive growth by providing personalized recommendations, increasing user engagement, enhancing the customer experience, gaining a competitive edge, and leveraging valuable data-driven insights.
+
+
+## To utilize the recommendation system on your local system, kindly follow the provided instructions.
+1) clone the repository 
+2) after clonning go this link and download similarity.pkl file and paste it inside your artifacts folder only https://drive.google.com/file/d/1TiME7B9SpiMz6p-UtWzyYRYuKefup4Tj/view?usp=share_link
+3) open anaconda as a admininrator
+4) fetch your directory
+5) type code . to open your VsCode
+6) go to terminal and select cmd termial
+7) and then create new virtural environment using command written below
+8) activate the virtual environment
+9) then install all the essential pacakages by firing the code in your terminal
+10) then type python app.py in your termial your will URL open in your browser 
+11) and use the recommendation system
+
