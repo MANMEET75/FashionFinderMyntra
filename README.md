@@ -9,7 +9,7 @@ To measure the similarity between documents based on their content, I employed c
 
 After implementing the recommendation function, I saved the necessary files as pickle files using the pickle module. These files will be utilized in creating a web application in the development environment, ensuring a smooth and interactive user experience.
 
-[Link Text](path/to/file)
+[Please take a look at the notebook I created in the research environment.](Myntra Fashion Product Content Based Recommendation System.ipynb)
 
 
 ## Development Environment
