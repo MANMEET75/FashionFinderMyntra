@@ -9,6 +9,8 @@ To measure the similarity between documents based on their content, I employed c
 
 After implementing the recommendation function, I saved the necessary files as pickle files using the pickle module. These files will be utilized in creating a web application in the development environment, ensuring a smooth and interactive user experience.
 
+[Link Text](path/to/file)
+
 
 ## Development Environment
 In the Development environment, I crafted a highly interactive web application utilizing Flask as the backend framework. Leveraging my web development expertise, I designed a visually appealing user interface inspired by Myntra's official website. To achieve this, I employed HTML, CSS, Bootstrap, and JavaScript. By integrating Flask, I seamlessly incorporated my FashionFinderMyntra recommendation system into the application's backend.
