@@ -19,6 +19,11 @@ To facilitate collaboration with team members, I initiated a repository on GitHu
 
 Overall, by employing Flask and integrating frontend technologies, I created an immersive web application with an interactive UI, closely resembling Myntra's official website. The project's well-organized structure, collaboration-ready repository, and usage of a virtual environment contribute to a streamlined and efficient development process.
 
+## Please take a look at the elegantly designed user interface of Myntra, which I have created utilizing my web development expertise.
+```bash
+https://replit.com/@MANMEET75/WrithingImaginaryInstitutions-1?v=1
+```
+
 ## Let's put our recommendation system to the test!
 <img src="appdemo.gif" alt="testing-of-recommendation-system">
 
