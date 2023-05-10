@@ -129,7 +129,7 @@ env.bak/
 venv.bak/
 
 # not adding artifacts over here as they are too big around 1.5GB
-artifacts/
+artifacts/similarity.pkl
 data/
 
 # Spyder project settings
