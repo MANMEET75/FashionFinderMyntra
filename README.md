@@ -38,15 +38,29 @@ Overall, the content-based recommendation system I have developed can help Myntr
 
 
 ## To utilize the recommendation system on your local system, kindly follow the provided instructions.
-1) clone the repository 
-2) after clonning go this link and download similarity.pkl file and paste it inside your artifacts folder only https://drive.google.com/file/d/1TiME7B9SpiMz6p-UtWzyYRYuKefup4Tj/view?usp=share_link
-3) open anaconda as a admininrator
-4) fetch your directory
-5) type code . to open your VsCode
-6) go to terminal and select cmd termial
-7) and then create new virtural environment using command written below
-8) activate the virtual environment
-9) then install all the essential pacakages by firing the code in your terminal
-10) then type python app.py in your termial your will URL open in your browser 
-11) and use the recommendation system
 
+1) To proceed, open the command prompt on your system and navigate to the desired directory where you wish to store the model. Then, execute the following command.
+```bash
+git clone https://github.com/MANMEET75/FashionFinderMyntra.git
+```
+
+2) Kindly download the "similarity.pkl" file from the provided link, as it exceeds the file size limit for GitHub storage.
+```bash
+https://drive.google.com/file/d/1TiME7B9SpiMz6p-UtWzyYRYuKefup4Tj/view?usp=share_link
+```
+3) Please open your preferred integrated development environment (IDE), such as PyCharm or Visual Studio Code (VScode). For optimal performance, we recommend using VScode. Once opened, navigate to the "artifacts" folder within the IDE and paste the "similarity.pkl" file into it.
+4) To create and activate the virtual environment, execute the provided command in your command prompt.
+```bash
+cd FashionFinderMyntra
+py -3 -m venv venv
+venv\Scripts\activate
+
+```
+5) Install all the necessary packages and libraries by executing the following pip command.
+```bash
+pip install -r requirements.txt
+```
+7) To utilize the recommendation system, simply enter the command "python app.py" in your command prompt.
+```bash
+python app.py
+```
